@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: 
+    <input id="n" type="text"> <br>
+    Email:
+    <input id="e" type="text"><br>
+    Password:
+    <input type="text" name="" id="p"><br>
+    <button id="b" type="submit">Submit</button>
+    <script>
+        const b = document.getElementById("b")
+        b.addEventListener("click",()=>{
+            const name = document.getElementById("n").value
+            const nameReg = /^[A-Za-z]+$/
+            const email = document.getElementById("e").value
+            const emailReg = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+            const password = document.getElementById("p").value
+            const passwordReg = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[A-Za-z\d]{8,}$/
+
+            if (!nameReg.test(name)) {
+                alert("Enter valid name")
+            } else if(!emailReg.test(email)) {
+                alert("Enter valid email.")
+            }
+            else if(!passwordReg.test(password)) {
+                alert("Enter valid password. Length must be > 8. Must contain one Alphateic, one small and one digit.")
+            }
+            else {
+                alert("OK")
+            }
+            const user ={
+                name,
+                email
+            }
+            localStorage.setItem("data",JSON.stringify(user))
+
+
+        })
+    </script>
+</body>
+</html>

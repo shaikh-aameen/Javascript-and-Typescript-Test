@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="pass" type="text">
+    <span id="icon" style="cursor: pointer;" onclick="togglePass()">👁️</span>
+    <script>
+        function togglePass() {
+            const pass = document.querySelector("#pass")
+            let icon = document.querySelector("#icon")
+
+            if (pass.type === "password") {
+                pass.type = "text"
+                icon.textContent = "🙈"
+            } else {
+                pass.type = "password"
+                icon.textContent = "👁️"
+            }
+        }
+    </script>
+</body>
+</html>

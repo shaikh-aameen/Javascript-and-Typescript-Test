@@ -1,0 +1,7 @@
+Steps to install typescript :
+Step 1 : Generate package.json file using command > npm init -y
+Step 2 : Install the typescript using command > npm i typescript
+
+Steps to execute the typescript program
+Step 1 : To compile the typescript file use this command > tsc filename.tsc
+Step 2 : To run the javascript file use this command > node filename.js
